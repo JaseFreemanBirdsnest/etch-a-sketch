@@ -12,4 +12,4 @@ function buildGrid(col,row){
     };
 };
 
-buildGrid(10,10);
+buildGrid(4,4);
