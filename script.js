@@ -7,9 +7,11 @@ function buildGrid(col,row){
     for (i = 0; i < (col*row); i++){
         let cell = document.createElement("div");
         cell.innerText = (i + 1);
+        cell.setAttribute('id', 'grid-cell');
         gridCont.appendChild(cell);
         
     };
 };
+const gridSize = prompt('Please enter a grid size')
 
-buildGrid(4,4);
+buildGrid(gridSize,gridSize); 
