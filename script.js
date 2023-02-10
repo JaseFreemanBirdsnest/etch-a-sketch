@@ -9,17 +9,9 @@ function buildGrid(col,row){
     for (i = 0; i < (col*row); i++){
         let cell = document.createElement("div");
         cell.innerText = (i + 1);
-        cell.setAttribute('onClick', 'changeColour()');
-        cell.setAttribute('class', 'cellColour');
-        cell.setAttribute('id', 'cell'+(i+1));
+        cell.setAttribute('class', 'grid-cell');
+
         gridCont.appendChild(cell);        
     };
 };
   
-function changeColour(){
-    let cellToChange = document.getElementsByClassName('cellColour'), i, len;
-
-    for (i=0, len = cellToChange.length; i < len; i++){
-        cellToChange[i].style.color = "black"
-    }
-}
