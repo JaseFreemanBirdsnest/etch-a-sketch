@@ -11,6 +11,7 @@ function buildGrid(col,row){
         cell.innerText = (i + 1);
         cell.setAttribute('onClick', 'changeColour()');
         cell.setAttribute('class', 'cellColour');
+        cell.setAttribute('id', 'cell'+(i+1));
         gridCont.appendChild(cell);        
     };
 };
