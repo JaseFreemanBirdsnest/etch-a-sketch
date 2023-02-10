@@ -1,5 +1,7 @@
 const gridCont = document.getElementById("grid-container")
+const gridSize = prompt('Please enter a grid size')
 
+buildGrid(gridSize,gridSize)
 
 function buildGrid(col,row){
     gridCont.style.setProperty('--grid-cols', col);
@@ -7,11 +9,16 @@ function buildGrid(col,row){
     for (i = 0; i < (col*row); i++){
         let cell = document.createElement("div");
         cell.innerText = (i + 1);
-        cell.setAttribute('id', 'grid-cell');
-        gridCont.appendChild(cell);
-        
+        cell.setAttribute('onClick', 'changeColour()');
+        cell.setAttribute('class', 'cellColour');
+        gridCont.appendChild(cell);        
     };
 };
-const gridSize = prompt('Please enter a grid size')
+  
+function changeColour(){
+    let cellToChange = document.getElementsByClassName('cellColour'), i, len;
 
-buildGrid(gridSize,gridSize); 
+    for (i=0, len = cellToChange.length; i < len; i++){
+        cellToChange[i].style.color = "black"
+    }
+}
