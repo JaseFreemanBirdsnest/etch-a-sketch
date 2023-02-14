@@ -11,10 +11,13 @@
 
     <div id="grid-container"></div>
     <div id="grid-settings">
+        <div>
+            <button onclick="clearGrid()">Clear all</button>
+            <button>Eraser</button>
+        </div>
         <input 
         type="grid-size"
         placeholder="Size of Etch-A-Sketch"
-        value="10"
         onchange="changeGridSize(this.value)"
         />
         <button>Set Etch-A-Sketch Size</button>
@@ -25,3 +28,6 @@
     <script src="script.js"></script>
 
 </html>
+
+<!-- Video Tutorial which is being used as a guide
+https://www.youtube.com/watch?v=dyhuaXeuyGo -->

@@ -19,9 +19,15 @@ function buildGrid(size){
 };
   
 function colourCell(){
-    this.style.backgroundColor = 'black';
+    this.style.backgroundColor = 'blue';
 }
 
 function changeGridSize(input){
     buildGrid(input);
+}
+
+function clearGrid(){
+    let gridCont = document.querySelector(".grid-container");
+    let cells = gridCont.querySelectorAll("div");
+    cells.style.backgroundColor = "white";
 }
