@@ -1,17 +1,16 @@
-const gridCont = document.getElementById("grid-container")
-// const gridSize = prompt('Please enter a grid size')
+const gridCont = document.getElementById("grid-container");
+const errorMessage = document.getElementById("error-message");
+let click = true;
 
-// buildGrid(gridSize)
 
 function buildGrid(size){
-    let removeCells = gridCont.querySelectorAll("div");
+    let removeCells = gridCont.querySelectorAll("grid-cell");
     removeCells.forEach((div) => div.remove);
 
     gridCont.style.setProperty('--grid-cols', size);
     gridCont.style.setProperty('--grid-rows', size);
     for (i = 0; i < (size*size); i++){
         let cell = document.createElement("div");
-        // cell.innerText = (i + 1);
         cell.setAttribute('class', 'grid-cell');
         cell.addEventListener('mouseover', colourCell);
         gridCont.appendChild(cell);        
@@ -19,15 +18,32 @@ function buildGrid(size){
 };
   
 function colourCell(){
-    this.style.backgroundColor = 'blue';
+    if(click){ 
+        this.style.backgroundColor = 'blue';
+    }
+    
 }
 
 function changeGridSize(input){
-    buildGrid(input);
+    if(input >= 2 && input <= 100){
+            buildGrid(input);
+    } else {
+    const errorMessage = document.getElementById("error-message");
+    let diffInput = document.createElement("div");
+    diffInput.innerText = ("Please enter a number between 2 and 100");
+    errorMessage.appendChild(diffInput);
+    }
 }
 
 function clearGrid(){
-    let gridCont = document.querySelector(".grid-container");
+    let gridCont = document.getElementById("grid-container");
     let cells = gridCont.querySelectorAll("div");
-    cells.style.backgroundColor = "white";
+    cells.forEach((div) => div.style.backgroundColor = "white");
 }
+
+document.querySelector("body").addEventListener("click", (e) =>{
+        if(e.target.tagName != "BUTTON"){  
+            click = !click;
+        }
+    }
+)

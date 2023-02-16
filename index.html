@@ -10,17 +10,22 @@
 <body>
 
     <div id="grid-container"></div>
+    <br>
+
     <div id="grid-settings">
         <div>
-            <button onclick="clearGrid()">Clear all</button>
-            <button>Eraser</button>
+            <button class="btn" onclick="clearGrid()">Clear Board</button>
+            <button class="btn">Eraser</button>
         </div>
+        <br>
         <input 
-        type="grid-size"
+        type="number"
         placeholder="Size of Etch-A-Sketch"
         onchange="changeGridSize(this.value)"
         />
-        <button>Set Etch-A-Sketch Size</button>
+        <br>
+        <button class="btn">Set Etch-A-Sketch Size</button>
+        <div id="error-message"></div>
     </div>
 
 
